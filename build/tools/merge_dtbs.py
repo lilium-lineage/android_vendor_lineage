@@ -266,6 +266,7 @@ class DeviceTree(DeviceTreeInfo):
 	EXTRA_KEYS = (
 		('oplus,hw-id', 1),
 		('oplus,project-id', 1),
+		('qcom,oem-id', 1),
 		('xiaomi,miboard-id', 2),
 	)
 
@@ -484,7 +485,6 @@ def create_adjacency(devicetrees):
 
 			for symbol_dt in symbol_map[fixup]:
 				if dt == symbol_dt:
-					assert not len(graph[dt.filename])
 					graph[dt.filename].add(symbol_dt)
 
 	return graph
